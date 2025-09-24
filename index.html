@@ -261,45 +261,48 @@
             <p>Universidad - Curso dictado por Fred Cruz Torres</p>
         </footer>
     </div>
+<script>
+    let contadorTrabajos = { 1: 1, 2: 1 };
 
-    <script>
-        let contadorTrabajos = { 1: 1, 2: 1 };
+    function mostrarMensaje(trabajo) {
+        alert(`Has seleccionado: ${trabajo}\n\n¡Aquí puedes agregar el enlace a tu trabajo!`);
+    }
 
-        function mostrarMensaje(trabajo) {
-            alert(`Has seleccionado: ${trabajo}\n\n¡Aquí puedes agregar el enlace a tu trabajo!`);
+    function agregarTrabajo(unidad) {
+        const nombreTrabajo = prompt(`Ingresa el nombre del nuevo trabajo para la Unidad ${unidad}:`);
+        if (nombreTrabajo && nombreTrabajo.trim() !== '') {
+            agregarItem(unidad, `Tarea ${contadorTrabajos[unidad]}: ${nombreTrabajo}`);
+            contadorTrabajos[unidad]++;
         }
+    }
 
-        function agregarTrabajo(unidad) {
-            const nombreTrabajo = prompt(`Ingresa el nombre del nuevo trabajo para la Unidad ${unidad}:`);
-            if (nombreTrabajo && nombreTrabajo.trim() !== '') {
-                agregarItem(unidad, `Tarea ${contadorTrabajos[unidad]}: ${nombreTrabajo}`);
-                contadorTrabajos[unidad]++;
-            }
+    function subirTrabajo(event, unidad) {
+        const archivo = event.target.files[0];
+        if (archivo) {
+            agregarItem(unidad, `Archivo: ${archivo.name}`);
+            contadorTrabajos[unidad]++;
         }
+    }
 
-        function subirTrabajo(event, unidad) {
-            const archivo = event.target.files[0];
-            if (archivo) {
-                agregarItem(unidad, `Archivo: ${archivo.name}`);
-                contadorTrabajos[unidad]++;
-            }
-        }
+    function agregarItem(unidad, texto) {
+        const lista = document.getElementById(`trabajos-unidad${unidad}`);
+        const nuevoItem = document.createElement('li');
+        nuevoItem.className = 'trabajo-item';
+        nuevoItem.textContent = texto;
+        lista.appendChild(nuevoItem);
 
-        function agregarItem(unidad, texto) {
-            const lista = document.getElementById(`trabajos-unidad${unidad}`);
-            const nuevoItem = document.createElement('li');
-            nuevoItem.className = 'trabajo-item';
-            nuevoItem.textContent = texto;
-            lista.appendChild(nuevoItem);
+        nuevoItem.style.opacity = '0';
+        nuevoItem.style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+            nuevoItem.style.transition = 'all 0.5s ease';
+            nuevoItem.style.opacity = '1';
+            nuevoItem.style.transform = 'translateY(0)';
+        }, 100);
+    }
+</script>
+<div id="visorCodigo" style="display:none; background:#1e1e1e; color:white; padding:15px; border-radius:10px; margin-top:20px;"></div>
+<iframe id="visorEjecucion" style="display:none; width:100%; height:300px; border:2px solid #ccc; border-radius:10px; margin-top:20px; background:white;"></iframe>
 
-            nuevoItem.style.opacity = '0';
-            nuevoItem.style.transform = 'translateY(-20px)';
-            setTimeout(() => {
-                nuevoItem.style.transition = 'all 0.5s ease';
-                nuevoItem.style.opacity = '1';
-                nuevoItem.style.transform = 'translateY(0)';
-            }, 100);
-        }
-    </script>
+   
 </body>
 </html>
