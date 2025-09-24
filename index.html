@@ -1,114 +1,305 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación Numérica - FINESI 2025</title>
-    <link rel="stylesheet" href="segundo style.css"> 
+    <title>Programación Numérica - Job Edward Apaza Curtihuanca</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .header img {
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .docente {
+            font-size: 1.3em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .estudiante {
+            font-size: 1.2em;
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .curso {
+            font-size: 1.1em;
+            color: #8e44ad;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .descripcion h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .descripcion p {
+            text-align: justify;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .vision-mision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .vision, .mision {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .mision {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+        }
+
+        .vision h4, .mision h4 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .unidades {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .unidad {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .unidad:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .unidad h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .unidad-2 h2 {
+            border-bottom-color: #e74c3c;
+        }
+
+        .trabajos-lista {
+            list-style: none;
+        }
+
+        .agregar-trabajo {
+            background: linear-gradient(135deg, #00cec9, #55a3ff);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .agregar-trabajo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .file-input {
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .unidades {
+                grid-template-columns: 1fr;
+            }
+            
+            .vision-mision {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
-    
-    <img src="imagen_1.jpeg" alt="Edificio de la universidad" class="imagen-superior-fija">
+    <div class="container">
+        <header class="header">
+            <!-- Imagen que me enviaste -->
+            <img src="imagen_1.jpeg" alt="Imagen del curso" id="imagen-curso">
+            <h1>PROGRAMACIÓN NUMÉRICA</h1>
+            <div class="docente">Docente: FRED CRUZ TORRES</div>
+            <div class="estudiante">Estudiante: JOB EDWARD APAZA CURTIHUANCA</div>
+            <div class="curso">Curso: PROGRAMACIÓN NUMÉRICA</div>
+        </header>
 
-    <header>
-        <h1>Programación Numérica</h1>
-        <p>FINESI 2025</p>
-    </header>
+        <section class="info-section">
+            <div class="descripcion">
+                <h3>📋 Descripción del Curso</h3>
+                <p>
+                    La Programación Numérica es una disciplina fundamental en la ingeniería y ciencias computacionales que se enfoca en el desarrollo y implementación de algoritmos para resolver problemas matemáticos complejos mediante métodos numéricos. Este curso abarca desde los fundamentos teóricos hasta la aplicación práctica de técnicas computacionales para la resolución de ecuaciones, interpolación, integración numérica, optimización y análisis de datos.
+                </p>
+                <p>
+                    Durante el desarrollo del curso, los estudiantes aprenderán a implementar algoritmos eficientes, analizar su convergencia y estabilidad, y aplicar herramientas de programación modernas para resolver problemas del mundo real en diversas áreas como la ingeniería, física, economía y ciencias de datos.
+                </p>
+            </div>
 
-    <nav>
-        <a href="#descripcion">Descripción</a>
-        <a href="#docente">Docente</a>
-        <a href="#estudiante">Estudiante</a>
-        <a href="#trabajos">Trabajos</a>
-        <a href="#una">Visión y Misión UNA</a>
-        <a href="#facultad">Visión y Misión Facultad</a>
-        <a href="#estudiante-vision">Visión y Misión Estudiante</a>
-    </nav>
+            <div class="vision-mision">
+                <div class="vision">
+                    <h4>🔭 Visión Personal</h4>
+                    <p>
+                        Convertirme en un profesional competente en el desarrollo de soluciones numéricas innovadoras, aplicando conocimientos sólidos en programación y matemáticas para contribuir al avance tecnológico y resolver problemas complejos que beneficien a la sociedad.
+                    </p>
+                </div>
+                <div class="mision">
+                    <h4>🎯 Misión Personal</h4>
+                    <p>
+                        Desarrollar habilidades excepcionales en programación numérica, mantener un aprendizaje continuo, colaborar efectivamente en equipos multidisciplinarios y aplicar métodos numéricos para crear soluciones eficientes y precisas en el ámbito académico y profesional.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <section id="descripcion">
-        <h2>Descripción</h2>
-        <p>
-            La programación numérica es una rama de la computación que se encarga de resolver 
-            problemas matemáticos mediante algoritmos y técnicas computacionales. 
-            Su aplicación permite simular, calcular y optimizar modelos complejos en diversas áreas 
-            como la ingeniería, física, estadística e informática.
-        </p>
-    </section>
+        <main class="unidades">
+            <section class="unidad unidad-1">
+                <h2>📚 UNIDAD 1</h2>
+                <ul class="trabajos-lista" id="trabajos-unidad1"></ul>
+                <input type="file" class="file-input" onchange="subirTrabajo(event, 1)">
+                <button class="agregar-trabajo" onclick="agregarTrabajo(1)">
+                    ➕ Agregar Nuevo Trabajo
+                </button>
+            </section>
 
-    <section id="docente">
-        <h2>Docente</h2>
-        <p><strong>FRED TORRES CRUZ</strong></p>
-    </section>
+            <section class="unidad unidad-2">
+                <h2>📊 UNIDAD 2</h2>
+                <ul class="trabajos-lista" id="trabajos-unidad2"></ul>
+                <input type="file" class="file-input" onchange="subirTrabajo(event, 2)">
+                <button class="agregar-trabajo" onclick="agregarTrabajo(2)">
+                    ➕ Agregar Nuevo Trabajo
+                </button>
+            </section>
+        </main>
 
-    <section id="estudiante">
-        <h2>Estudiante</h2>
-        <p><strong>JOB EDWARD APAZA CURTIHUANCA</strong></p>
-    </section>
+        <footer class="footer">
+            <p>&copy; 2024 Job Edward Apaza Curtihuanca - Programación Numérica</p>
+            <p>Universidad - Curso dictado por Fred Cruz Torres</p>
+        </footer>
+    </div>
 
-    <section id="trabajos" class="trabajos">
-        <h2>Mis Trabajos</h2>
-        <p>Aquí puedes subir y organizar tus trabajos:</p>
-        <ul>
-            <li><a href="#">Trabajo 1</a></li>
-            <li><a href="#">Trabajo 2</a></li>
-            <li><a href="#">Trabajo 3</a></li>
-        </ul>
-    </section>
+    <script>
+        let contadorTrabajos = { 1: 1, 2: 1 };
 
-    <section id="una">
-        <h2>Universidad Nacional del Altiplano - Visión y Misión</h2>
-        <h3>Visión</h3>
-        <p>
-            Ser una universidad líder en la formación profesional, investigación científica 
-            y proyección social, reconocida a nivel nacional e internacional, comprometida 
-            con el desarrollo sostenible y la identidad cultural del altiplano peruano.
-        </p>
-        <h3>Misión</h3>
-        <p>
-            Formar profesionales competentes, críticos y comprometidos con la sociedad, 
-            impulsando la investigación, la innovación y la extensión universitaria 
-            para contribuir al bienestar de la región, el país y el mundo.
-        </p>
-    </section>
+        function mostrarMensaje(trabajo) {
+            alert(`Has seleccionado: ${trabajo}\n\n¡Aquí puedes agregar el enlace a tu trabajo!`);
+        }
 
-    <section id="facultad">
-        <h2>Facultad de Estadística e Informática - Visión y Misión</h2>
-        <h3>Visión</h3>
-        <p>
-            Ser referente nacional en la formación de profesionales en estadística e informática, 
-            reconocida por la excelencia académica, la innovación tecnológica y el compromiso social.
-        </p>
-        <h3>Misión</h3>
-        <p>
-            Formar profesionales con sólidos conocimientos en estadística e informática, 
-            capaces de aplicar ciencia, tecnología e innovación en la solución de problemas 
-            de la sociedad y en la toma de decisiones basadas en datos.
-        </p>
-    </section>
+        function agregarTrabajo(unidad) {
+            const nombreTrabajo = prompt(`Ingresa el nombre del nuevo trabajo para la Unidad ${unidad}:`);
+            if (nombreTrabajo && nombreTrabajo.trim() !== '') {
+                agregarItem(unidad, `Tarea ${contadorTrabajos[unidad]}: ${nombreTrabajo}`);
+                contadorTrabajos[unidad]++;
+            }
+        }
 
-    <section id="estudiante-vision">
-        <h2>Visión y Misión del Estudiante</h2>
-        <h3>Visión</h3>
-        <p>
-            Convertirme en un profesional en programación y estadística, con la capacidad 
-            de desarrollar soluciones tecnológicas y analíticas que impulsen el desarrollo 
-            de mi región y el país.
-        </p>
-        <h3>Misión</h3>
-        <p>
-            Aprender con disciplina y responsabilidad, aplicando los conocimientos adquiridos 
-            en programación y estadística para crear proyectos innovadores que resuelvan 
-            problemas reales y aporten valor a la sociedad.
-        </p>
-        <p><strong>Autor: JOB EDWARD APAZA CURTIHUANCA</strong></p>
-    </section>
+        function subirTrabajo(event, unidad) {
+            const archivo = event.target.files[0];
+            if (archivo) {
+                agregarItem(unidad, `Archivo: ${archivo.name}`);
+                contadorTrabajos[unidad]++;
+            }
+        }
 
-    <footer>
-        <p>© 2025 - Programación Numérica | FINESI</p>
-    </footer>
+        function agregarItem(unidad, texto) {
+            const lista = document.getElementById(`trabajos-unidad${unidad}`);
+            const nuevoItem = document.createElement('li');
+            nuevoItem.className = 'trabajo-item';
+            nuevoItem.textContent = texto;
+            lista.appendChild(nuevoItem);
 
-    <img src="descarga_1.jpeg" alt="Logo de la facultad" class="imagen-inferior-fija">
-
+            nuevoItem.style.opacity = '0';
+            nuevoItem.style.transform = 'translateY(-20px)';
+            setTimeout(() => {
+                nuevoItem.style.transition = 'all 0.5s ease';
+                nuevoItem.style.opacity = '1';
+                nuevoItem.style.transform = 'translateY(0)';
+            }, 100);
+        }
+    </script>
 </body>
 </html>
