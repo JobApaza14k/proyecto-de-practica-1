@@ -354,6 +354,39 @@
         </div>
     </div>
 
+    <html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo del Área de un Rectángulo</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+
+  <h1>Ejemplo en JavaScript</h1>
+  <p id="resultado"></p>
+
+  <script>
+    class Rectangulo {
+      constructor(base, altura) {
+        this.base = base;
+        this.altura = altura;
+      }
+
+      calcularArea() {
+        return this.base * this.altura;
+      }
+    }
+
+    // Crear objeto
+    const rectangulo = new Rectangulo(10, 5);
+
+    // Calcular área
+    const area = rectangulo.calcularArea();
+
+    // Mostrar resultado en la página
+    document.getElementById("resultado").innerText = "El área del rectángulo es: " + area;
+  </script>
+</body>
     <script>
         let archivos = {
             1: [],
