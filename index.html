@@ -315,24 +315,21 @@
             <section class="unidad unidad-1">
                 <h2>📚 UNIDAD 1</h2>
                 <div class="file-upload">
-                    <h4>Subir nuevo trabajo</h4>
-                    <input type="file" class="file-input" accept=".py,.js,.html,.cpp,.c,.java,.txt" onchange="subirArchivo(1, this)">
-                    <input type="text" class="file-input" placeholder="Nombre del trabajo" id="nombreTrabajo1">
-                    <br>
-                    <button class="btn" onclick="agregarTrabajo(1)">📤 Subir Trabajo</button>
-                </div>
+    <h4>Agregar nuevo enlace</h4>
+    <input type="text" class="file-input" placeholder="Nombre del trabajo" id="nombreTrabajo1">
+    <input type="text" class="file-input" placeholder="URL del enlace (https://...)" id="urlTrabajo1">
+    <br>
+    <button class="btn" onclick="agregarLink(1)">🔗 Agregar Enlace</button>
+</div>          
                 <ul class="trabajos-lista" id="trabajos-unidad1"></ul>
             </section>
 
             <section class="unidad unidad-2">
                 <h2>📊 UNIDAD 2</h2>
-                <div class="file-upload">
-                    <h4>Subir nuevo trabajo</h4>
-                    <input type="file" class="file-input" accept=".py,.js,.html,.cpp,.c,.java,.txt" onchange="subirArchivo(2, this)">
-                    <input type="text" class="file-input" placeholder="Nombre del trabajo" id="nombreTrabajo2">
-                    <br>
-                    <button class="btn" onclick="agregarTrabajo(2)">📤 Subir Trabajo</button>
-                </div>
+                <input type="text" id="nombreTrabajo2">
+<input type="text" id="urlTrabajo2">
+<button onclick="agregarLink(2)">🔗 Agregar Enlace</button>
+
                 <ul class="trabajos-lista" id="trabajos-unidad2"></ul>
             </section>
         </main>
