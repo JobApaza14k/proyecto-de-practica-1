@@ -1,111 +1,249 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semana 1 - Trabajos</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-            margin: 0;
-            padding: 30px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programación Numérica - Job Edward Apaza Curtihuanca</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        h1 {
-            text-align: center;
-            color: #1a73e8;
-            margin-bottom: 30px;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      line-height: 1.6;
+    }
 
-        .contenedor {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+    .header-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
 
-        .tarjeta {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: 0.3s;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
 
-        .tarjeta:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-        }
+    header {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+    }
 
-        a {
-            display: block;
-            background: #1a73e8;
-            color: white;
-            text-decoration: none;
-            margin-top: 10px;
-            padding: 8px;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
 
-        a:hover {
-            background: #0d47a1;
-        }
+    .info-box {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
 
-        .volver {
-            display: block;
-            text-align: center;
-            margin-top: 40px;
-            color: #555;
-            text-decoration: none;
-        }
-        .volver:hover {
-            color: #1a73e8;
-        }
-    </style>
+    .info-box p {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+
+    .content {
+      padding: 40px 30px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 30px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      color: #2a5298;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 10px;
+    }
+
+    section p {
+      text-align: justify;
+      font-size: 1.05em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .unidades {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .unidad {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .unidad:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .unidad h3 {
+      color: #764ba2;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .lista-trabajos {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .lista-trabajos li {
+      margin: 15px 0;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .lista-trabajos li:hover {
+      transform: translateX(10px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .lista-trabajos a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: 500;
+      display: block;
+    }
+
+    .lista-trabajos a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #1e3c72;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .unidades {
+        grid-template-columns: 1fr;
+      }
+      
+      header h1 {
+        font-size: 1.8em;
+      }
+      
+      .content {
+        padding: 20px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>📚 Semana 1 - Trabajos</h1>
+  <div class="container">
+    <!-- Imagen superior -->
+    <!-- AQUÍ PUEDES AGREGAR TU IMAGEN: Reemplaza "imagen_1.jpg" con el nombre de tu archivo -->
+    <img src="imagen_1.jpg" alt="Banner del curso" class="header-image">
 
-    <div class="contenedor">
-        <div class="tarjeta">
-            <h2>Trabajo 1</h2>
-            <p>Descripción breve del trabajo 1.</p>
-            <a href="https://github.com/tu_usuario/trabajo1" target="_blank">🔗 Ver Código</a>
-            <a href="../pdfs/semana1_trabajo1.pdf" target="_blank">📄 Ver PDF</a>
+    <header>
+      <h1>📊 PROGRAMACIÓN NUMÉRICA</h1>
+      <div class="info-box">
+        <p><strong>👨‍🏫 Docente:</strong> FRED CRUZ TORRES</p>
+        <p><strong>👨‍🎓 Estudiante:</strong> JOB EDWARD APAZA CURTIHUANCA</p>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- Descripción del curso -->
+      <section>
+        <h2>📚 Descripción del Curso</h2>
+        <p>
+          La Programación Numérica es una disciplina fundamental en la ingeniería y las ciencias computacionales que se enfoca en el desarrollo e implementación de algoritmos para resolver problemas matemáticos mediante métodos numéricos. Este curso aborda técnicas esenciales para la solución de ecuaciones, sistemas lineales, interpolación, diferenciación e integración numérica, así como la resolución de ecuaciones diferenciales.
+        </p>
+        <p>
+          A través de este curso, los estudiantes desarrollan habilidades para implementar algoritmos eficientes, analizar errores numéricos y aplicar métodos computacionales a problemas reales de ingeniería. Se utilizan herramientas de programación modernas para simular y visualizar soluciones, preparando a los estudiantes para enfrentar desafíos técnicos en el ámbito profesional.
+        </p>
+      </section>
+
+      <!-- Visión -->
+      <section>
+        <h2>🔭 Visión</h2>
+        <p>
+          Convertirme en un profesional altamente capacitado en el campo de la ingeniería y las ciencias computacionales, dominando técnicas avanzadas de programación numérica y métodos computacionales. Aspiro a contribuir significativamente al desarrollo de soluciones innovadoras que impacten positivamente en la sociedad, aplicando conocimientos matemáticos y algorítmicos para resolver problemas complejos del mundo real con precisión y eficiencia.
+        </p>
+      </section>
+
+      <!-- Misión -->
+      <section>
+        <h2>🎯 Misión</h2>
+        <p>
+          Mi misión como estudiante es desarrollar una comprensión profunda de los métodos numéricos y su implementación computacional, dedicándome al aprendizaje continuo y la práctica constante. Me comprometo a aplicar rigurosamente los conocimientos adquiridos en cada proyecto, mantener altos estándares de calidad en mi trabajo académico, y colaborar activamente con mis compañeros y docentes. Busco no solo aprobar el curso, sino dominar las competencias necesarias para destacar como profesional en el campo de la programación numérica y la resolución de problemas científicos.
+        </p>
+      </section>
+
+      <!-- Unidades de trabajo -->
+      <div class="unidades">
+        <!-- UNIDAD 1 -->
+        <div class="unidad">
+          <h3>📘 UNIDAD 1</h3>
+          <section>
+            <h2>📁 Trabajos realizados</h2>
+            <ol class="lista-trabajos">
+              <!-- AQUÍ AGREGA TUS LINKS DE LA UNIDAD 1 -->
+              <li><a href="https://github.com/tuusuario/proyecto1" target="_blank">1️⃣ Identificacion de funciones</a></li>
+              <li><a href="https://github.com/JobApaza14k/proyecto-de-practica-1/blob/main/graficador.py" target="_blank">2️⃣ graficador de sistemas lineales</a></li>
+              <li><a href="https://github.com/JobApaza14k/proyecto-de-practica-1/blob/main/ejercicios%20resueltos.py" target="_blank">3️⃣ ejercicios resueltos</a></li>
+              <li><a href="https://github.com/JobApaza14k/proyecto-de-practica-1/blob/main/metodo_Rapson.py" target="_blank">4️⃣ hallando raices</a></li>
+            </ol>
+          </section>
         </div>
 
-        <div class="tarjeta">
-            <h2>Trabajo 2</h2>
-            <p>Descripción breve del trabajo 2.</p>
-            <a href="https://github.com/tu_usuario/trabajo2" target="_blank">🔗 Ver Código</a>
-            <a href="../pdfs/semana1_trabajo2.pdf" target="_blank">📄 Ver PDF</a>
+        <!-- UNIDAD 2 -->
+        <div class="unidad">
+          <h3>📗 UNIDAD 2</h3>
+          <section>
+            <h2>📁 Trabajos realizados</h2>
+            <ol class="lista-trabajos">
+              <!-- AQUÍ AGREGA TUS LINKS DE LA UNIDAD 2 -->
+              <li><a href="https://github.com/tuusuario/proyecto5" target="_blank">1️⃣ Interpolación de Lagrange</a></li>
+              <li><a href="https://github.com/tuusuario/proyecto6" target="_blank">2️⃣ Integración Numérica</a></li>
+              <li><a href="https://github.com/tuusuario/proyecto7" target="_blank">3️⃣ Método de Euler</a></li>
+              <li><a href="https://drive.google.com/file/d/yyyy/view" target="_blank">4️⃣ Informe Final (PDF)</a></li>
+            </ol>
+          </section>
         </div>
-
-        <div class="tarjeta">
-            <h2>Trabajo 3</h2>
-            <p>Descripción breve del trabajo 3.</p>
-            <a href="https://github.com/tu_usuario/trabajo3" target="_blank">🔗 Ver Código</a>
-            <a href="../pdfs/semana1_trabajo3.pdf" target="_blank">📄 Ver PDF</a>
-        </div>
-
-        <div class="tarjeta">
-            <h2>Trabajo 4</h2>
-            <p>Descripción breve del trabajo 4.</p>
-            <a href="https://github.com/tu_usuario/trabajo4" target="_blank">🔗 Ver Código</a>
-            <a href="../pdfs/semana1_trabajo4.pdf" target="_blank">📄 Ver PDF</a>
-        </div>
-
-        <div class="tarjeta">
-            <h2>Trabajo 5</h2>
-            <p>Descripción breve del trabajo 5.</p>
-            <a href="https://github.com/tu_usuario/trabajo5" target="_blank">🔗 Ver Código</a>
-            <a href="../pdfs/semana1_trabajo5.pdf" target="_blank">📄 Ver PDF</a>
-        </div>
+      </div>
     </div>
 
-    <a href="../index.html" class="volver">⬅️ Volver al Portafolio Principal</a>
+    <footer>
+      <p>&copy; 2025 Job Edward Apaza Curtihuanca - Programación Numérica</p>
+      <p>Universidad Nacional del Altiplano</p>
+    </footer>
+  </div>
 </body>
 </html>
